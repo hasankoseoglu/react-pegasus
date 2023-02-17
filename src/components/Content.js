@@ -1,7 +1,19 @@
 import React from 'react';
 import fly from '../assets/images/fly.svg';
+import form, { useState } from 'react';
+
 
 function Content(props) {
+    const [firstName, setFirstName] = useState('');
+    const [lastName, setLastName] = useState('');
+
+    const handleFirstNameChange = (event) => {
+        setFirstName(event.target.value);
+    }
+
+    const handleLastNameChange = (event) => {
+        setLastName(event.target.value);
+    }
     return (
         <section className="bg-pegasus-yellow rounded-t-3xl flex items-center">
             <div className="container">
@@ -30,7 +42,7 @@ function Content(props) {
                                         </label>
                                         <input
                                             className="shadow appearance-none border-bg-gray rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-                                            id="username" type="text" placeholder="Ad" />
+                                            id="username" value={firstName} onChange={handleFirstNameChange} type="text" placeholder="Ad" />
                                     </div>
                                     <div>
                                         <label className="block text-grey-darker text-sm font-bold mb-2"
@@ -39,7 +51,7 @@ function Content(props) {
                                         </label>
                                         <input
                                             className="shadow appearance-none border-bg-gray rounded w-full py-2 px-3 text-grey-darker leading-tight focus:outline-none focus:shadow-outline"
-                                            id="username" type="text" placeholder="Soyad" />
+                                            id="username" value={lastName} onChange={handleLastNameChange} type="text" placeholder="Soyad" />
 
                                     </div>
                                     <div className="mb-4">
@@ -62,7 +74,7 @@ function Content(props) {
                                     </div>
                                 </div>
                                 <div className="flex items-center justify-center">
-                                    <button className="btn btn-error text-pegasus-white btn-wide">KAYIT OL</button>
+                                    <button className="btn bg-pegasus-red text-xl px-5 text-pegasus-white rounded-2xl h-14 w-full">KAYIT OL</button>
                                 </div>
                             </form>
                         </div>
