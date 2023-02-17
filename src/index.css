@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.bg-pegasus-white.h-100 {
+    z-index: 99;
+    position:absolute;
+    width: 400px;
+    height: 400px;
+    opacity: .4;
+    left: -11%;
+    top: 2%;
+}
